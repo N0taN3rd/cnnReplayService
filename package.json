@@ -1,7 +1,7 @@
 {
   "name": "cnnReplayService",
   "version": "1.0.0",
-  "description": "replay cnn.com from IA",
+  "description": "Fixes the issues that caused the homepage of http://cnn.com from being replayed from Internet Archives Wayback Machine",
   "main": "index.js",
   "author": "John Berlin",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "cheerio": "^0.22.0",
     "express": "^4.15.2",
     "express-http-proxy": "^0.11.0",
-    "http-shutdown": "^1.2.0"
+    "http-shutdown": "^1.2.0",
+    "yargs": "^7.0.2"
   }
 }
