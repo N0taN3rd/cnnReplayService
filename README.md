@@ -20,7 +20,7 @@ the page to not be made available for the JavaScript responsible for the
 loading and rendering of it.
 
 Because of this when replaying the homepage after 2016-11-01T13:15:40 appears to be an archived `about:blank` page.
-![Replayed CNN Homepage](https://2.bp.blogspot.com/-MuxnmAsqmEk/WIKLMT72HhI/AAAAAAAAAQk/qc3A7jgrqs0bFgEM85ZF1OZyURU3cFULQCLcB/s1600/cnnWhiteOut.png =250x)
+![cnn.com homepage replay white out](cnnWhiteOut.png)
 
 
 ## How Does This Work
