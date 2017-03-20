@@ -11,4 +11,4 @@ RUN apt-get update
 
 EXPOSE 3000
 
-CMD ["sh", "dockerRun.sh"]
+CMD ["sh", "run.sh"]
