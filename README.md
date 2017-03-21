@@ -4,7 +4,6 @@ Replay mementos of the [CNN](http://cnn.com) homepage from the [Internet Archive
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## Usage
-#### Node
 This project will run on node >= 6.x and to run `(npm|yarn) install && ./run.sh`.
 Be sure to execute `chmod +x run.sh` if you have not already.
 If your on windows (or do not want to use the bash file) simply substitute `./run.sh`
@@ -12,7 +11,21 @@ with `node --harmony index.js`.
 
 If you wonder if your current node install can run this project consult [node.green](http://node.green/).
 
+There are is only one optional argument that can be supplied to program which is
+--port="new port" defaults to 3000.
 
+Or if Docker is your thing `docker pull jberlin/cnn-replay-service`
+and `docker run -p 3000:3000 jberlin/cnn-replay-service`
+
+Once started simply navigate to `http://localhost:3000` and happy replaying :tada:
+
+## The Secret Sauce
+There is none. All this project does is proxy the Internet Archives Wayback Machine
+for the following URIs `http://web.archive.org/web/*/http://www.cnn.com/` and `http://web.archive.org/web/<cnn.com URI-M>`.
+
+And two slight modifications to the replayed Memento :suspect:
+
+The modifications made are described in the section `Modifications Made To The Replayed Memento`
 
 ## Why Is This Necessary
 For a detailed explaination as to why this is necessary see the blog post from the

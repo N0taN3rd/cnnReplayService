@@ -4,7 +4,7 @@ const cors = require('cors')
 const url = require('url')
 const removeWdd = require('./removeWdd')
 
-const root = require('yargs').argv.root || '/'
+const root = '/', defaultPath = '/web/*/http://www.cnn.com/'
 const app = express()
 const main = 'http://web.archive.org'
 
@@ -29,7 +29,7 @@ app.use(root, expressProx(main, {
     let thePath
     if (req.url === root) {
       replaying = null
-      thePath = '/web/*/http://www.cnn.com/'
+      thePath = defaultPath
     } else if (shouldCorrectPath.test(req.url) && replaying) {
       // correct the url for the new dynamic content
       thePath = `${replayPath}${req.url.substring(1)}`
@@ -40,13 +40,15 @@ app.use(root, expressProx(main, {
   },
   decorateRequest (proxyReq, originalReq) {
     if (proxyReq.headers.origin) {
-      // sometimes the XHR requests headers have the proxy origin dont want that leaking
+      // sometimes the request headers have the proxy origin dont want that leaking
       // this reduces the number of ECONNREFUSED (IA refuses our connection)
       delete proxyReq.headers.origin
     }
     proxyReq.headers.host = 'web.archive.org'
     if (replayRe.test(proxyReq.path) && replaying) {
       proxyReq.headers.referer = replaying
+    } else if (proxyReq.path === defaultPath) {
+      proxyReq.headers.referer = 'http://archive.org/web/'
     } else {
       proxyReq.headers.referer = 'http://web.archive.org/web/*/http://www.cnn.com/'
     }
