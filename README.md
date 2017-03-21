@@ -76,11 +76,3 @@ Which this project would rewrite to `/web/20170310060334/http://www.cnn.com/data
 Without these rewrites the page content on 2017-03-10T06:03:34 would not be viewable as
 these URI-Rs are included in the information made available to the archived pages JavaScript
 by the previous modification made by this project.
-
-If the Internet Archives own rewrite mechanisms missed these URI-Rs then the Internet Archive
-must not have these resources?
-
-As of 2017-03-20 the Internet Archive contains 201 mementos of the URI-R. This number was obtained by executing the following command seen below
-```shell
-curl http://memgator.cs.odu.edu/timemap/link/http://www.cnn.com/data/ocs/section/_homepage-zone-injection/index.html:homepage-injection-zone-2/views/zones/common/zone-manager.izl | grep memento -c
-```
