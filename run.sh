@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-node --harmony index.js
+NODE_ENV=production node --harmony index.js

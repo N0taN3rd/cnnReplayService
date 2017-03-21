@@ -1,6 +1,19 @@
 # CNN Homepage Replay Service
 Replay mementos of the [CNN](http://cnn.com) homepage from the [Internet Archives](https://archive.org/) locally without failure.
 
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
+## Usage
+#### Node
+This project will run on node >= 6.x and to run `(npm|yarn) install && ./run.sh`.
+Be sure to execute `chmod +x run.sh` if you have not already.
+If your on windows (or do not want to use the bash file) simply substitute `./run.sh`
+with `node --harmony index.js`.
+
+If you wonder if your current node install can run this project consult [node.green](http://node.green/).
+
+
+
 ## Why Is This Necessary
 For a detailed explaination as to why this is necessary see the blog post from the
 Web Science And Digital Libraries Research Group:
@@ -54,7 +67,7 @@ by the previous modification made by this project.
 If the Internet Archives own rewrite mechanisms missed these URI-Rs then the Internet Archive
 must not have these resources?
 
-As of 2017-03-20 the Internet Archive contains 201 mementos of the URI-R. This number was obtained by executing the following command seen below /play drama
+As of 2017-03-20 the Internet Archive contains 201 mementos of the URI-R. This number was obtained by executing the following command seen below
 ```shell
 curl http://memgator.cs.odu.edu/timemap/link/http://www.cnn.com/data/ocs/section/_homepage-zone-injection/index.html:homepage-injection-zone-2/views/zones/common/zone-manager.izl | grep memento -c
 ```

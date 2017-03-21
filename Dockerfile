@@ -9,6 +9,8 @@ LABEL maintainer="John Berlin:jberlin@cs.odu.edu" \
 
 RUN apt-get update
 
+ENV NODE_ENV production
+
 EXPOSE 3000
 
 CMD ["sh", "run.sh"]
