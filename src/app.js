@@ -4,7 +4,8 @@ const cors = require('cors')
 const url = require('url')
 const removeWdd = require('./removeWdd')
 
-const root = '/', defaultPath = '/web/*/http://www.cnn.com/'
+const root = '/'
+const defaultPath = '/web/*/http://www.cnn.com/'
 const app = express()
 const main = 'http://web.archive.org'
 
@@ -17,7 +18,8 @@ const corsOptions = {
   optionsSuccessStatus: 200
 }
 
-let replaying = null, replayPath = null
+let replaying = null
+let replayPath = null
 
 app.enable('trust proxy')
 app.disable('x-powered-by')
@@ -25,7 +27,7 @@ app.disable('x-powered-by')
 app.options('*', cors(corsOptions))
 
 app.use(root, expressProx(main, {
-  forwardPath(req, res) {
+  forwardPath (req, res) {
     let thePath
     if (req.url === root) {
       replaying = null

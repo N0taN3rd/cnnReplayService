@@ -16,5 +16,13 @@
     "express-http-proxy": "^0.11.0",
     "http-shutdown": "^1.2.0",
     "yargs": "^7.0.2"
+  },
+  "devDependencies": {
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2"
+  },
+  "scripts": {
+    "standard": "standard --verbose | snazzy",
+    "standard-fix": "standard --fix"
   }
 }
